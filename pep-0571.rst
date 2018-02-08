@@ -252,7 +252,9 @@ Platform Detection for Installers
 Platforms may define a ``manylinux2_compatible`` boolean attribute on
 the ``_manylinux`` module described in PEP 513.  A platform is
 considered incompatible with ``manylinux2`` if the attribute is
-``False``.
+present and ``False``.  The platform is compatible if
+``_manylinux.manylinux2`` is ``True`` or if that module or its
+attribute is missing and the system uses ``glibc`` 2.12.
 
 
 Backwards compatibility with ``manylinux1`` wheels
